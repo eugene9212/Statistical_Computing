@@ -4,8 +4,8 @@ my.logit.reg <- function(X, y, beta0 = NULL, max.iter = 100, eps = 1.0e-5)
   beta <- beta0
   for (iter in 1:max.iter)
   {
-    eta <- X %*% beta
-    p <- exp(eta)/ (1 + exp(eta))
+    theta <- X %*% beta
+    p <- exp(theta)/ (1 + exp(theta))
     w <- c(p * (1 - p)) 
     z <- X %*% beta + (y-p)/w 
     
